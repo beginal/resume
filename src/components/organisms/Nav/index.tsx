@@ -45,25 +45,44 @@ type NavType = {};
 
 // style 영역
 const NavWrap = styled.nav<NavType>`
-	background: gray;
+	position: sticky;
+	background: rgba(184, 184, 184, 0.6);
 	padding: 8px 30px;
 	.navBar {
+		position: relative;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 0;
+		color: #6c757d;
+		font-weight: 500;
 		div {
-			min-width: 300px;
+			min-width: 200px;
+			&:first-of-type {
+				text-align: right;
+			}
+			&:last-of-type {
+				text-align: left;
+			}
 			ul {
 				display: flex;
 				li {
+					&:hover {
+						color: #343a40;
+					}
 					a {
-						padding: 8px;
+						font-size: 0.9rem;
+						padding: 8px 10px;
 					}
 				}
 			}
 		}
 		.navTitle {
+			padding: 0 10px;
 			min-width: auto;
-			font-size: 1.25rem;
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: #000000;
 		}
 	}
 `;

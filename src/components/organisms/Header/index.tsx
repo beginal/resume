@@ -5,7 +5,7 @@ export interface HeaderProps {
 	children: React.ReactNode;
 }
 
-export const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
+const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
 	const styleProps = {
 		...props,
 	};
@@ -15,6 +15,8 @@ export const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
 		</HeaderWrap>
 	);
 };
+
+export default Header;
 
 type HeaderType = {};
 
