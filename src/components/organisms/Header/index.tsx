@@ -24,6 +24,7 @@ type HeaderType = {};
 const HeaderWrap = styled.header<HeaderType>`
 	.container {
 		padding: 16rem 4rem;
-		background: #949993;
+		background: url("./img/header.png") no-repeat center center/cover;
+		opacity: 0.8;
 	}
 `;

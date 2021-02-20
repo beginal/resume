@@ -1,23 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import Content from "components/molecules/Content";
-import { useSelector } from "react-redux";
-import { RootState } from "redux/store";
+
 export interface TableListProps {
 	title: string;
 	desc: string;
-	children: React.ReactNode;
+	item: Array<any>;
+	tailText?: string;
 }
 
-export const TableList: React.FC<TableListProps> = ({ title, desc, ...props }) => {
+export const TableList: React.FC<TableListProps> = ({ title, desc, item, tailText, ...props }) => {
 	const styleProps = {
 		title,
 		desc,
+		item,
 		...props,
 	};
 
-	const { project } = useSelector((state: RootState) => state.resumeReducer);
-	console.log(project);
 	return (
 		<>
 			<Content title={title} desc={desc} />
@@ -37,7 +36,7 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, ...props }) =
 							</tr>
 						</thead>
 						<tbody>
-							{project.map(({ title, image, intro, description, stack }) => (
+							{item.map(({ title, image, intro, description, stack }) => (
 								<tr>
 									<th className="title">
 										<div>
@@ -46,8 +45,17 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, ...props }) =
 										</div>
 									</th>
 									<td className="descirption">
-										<div>{intro}</div>
-										<p>{description}</p>
+										<div>
+											<div>
+												<div>{intro}</div>
+												<p>{description}</p>
+											</div>
+											<div>
+												{stack.map((item: string) => (
+													<span className="skillBox">{item}</span>
+												))}
+											</div>
+										</div>
 									</td>
 									<td className="etc">더보기</td>
 								</tr>
@@ -55,6 +63,7 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, ...props }) =
 						</tbody>
 					</table>
 				</div>
+				<div className="tales">{tailText}</div>
 			</TableListWrap>
 		</>
 	);
@@ -90,6 +99,7 @@ const TableListWrap = styled.div<TableListType>`
 						flex-direction: column;
 						justify-content: center;
 						align-items: center;
+						font-weight: 700;
 						img {
 							width: 160px;
 							height: 150px;
@@ -100,10 +110,35 @@ const TableListWrap = styled.div<TableListType>`
 					}
 				}
 				.descirption {
-					line-height: 1.3;
+					> div {
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						height: 200px;
+						line-height: 1.3;
+					}
 					padding: 15px 2px;
+					.skillBox {
+						text-transform: uppercase;
+						background: #c5c6c4;
+						font-weight: 300;
+						border-radius: 4px;
+						font-size: 0.6rem;
+						line-height: 0.8;
+						color: white;
+						padding: 2px 6px;
+						padding-bottom: 4px;
+						margin: 2px;
+					}
 				}
 			}
 		}
+	}
+	.tales {
+		text-align: center;
+		padding-top: 16px;
+		font-size: 0.75rem;
+		font-weight: 300;
+		color: #bbbbbb;
 	}
 `;

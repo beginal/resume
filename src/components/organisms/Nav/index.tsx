@@ -46,7 +46,8 @@ type NavType = {};
 // style 영역
 const NavWrap = styled.nav<NavType>`
 	position: sticky;
-	background: rgba(184, 184, 184, 0.6);
+	top: 0;
+	background: rgba(184, 184, 184, 0.8);
 	padding: 8px 30px;
 	.navBar {
 		position: relative;
@@ -78,7 +79,7 @@ const NavWrap = styled.nav<NavType>`
 			}
 		}
 		.navTitle {
-			padding: 0 10px;
+			padding: 0 20px;
 			min-width: auto;
 			font-size: 1.5rem;
 			font-weight: 600;

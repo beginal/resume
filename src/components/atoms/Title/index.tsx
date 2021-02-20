@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export interface TitleProps {
-	size?: "small" | "medium" | "large";
+	size?: "small" | "medium" | "large" | "X-large";
 	color?: string;
 	label: string;
 }
@@ -36,6 +36,8 @@ const TitleWrap = styled.h2<TitleType>`
 				return `font-size: 26px;`;
 			case "large":
 				return `font-size: 30px;`;
+			case "X-large":
+				return `font-size: 45px;`;
 		}
 	}};
 `;

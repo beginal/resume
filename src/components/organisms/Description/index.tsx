@@ -34,7 +34,7 @@ const DescriptionWrap = styled.div<DescriptionType>`
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 60%;
+		width: 80%;
 		color: #3f4165;
 		h2 {
 			font-family: "Noto Sans KR", sans-serif;

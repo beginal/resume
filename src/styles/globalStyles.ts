@@ -10,6 +10,7 @@ ${reset}
   }
   body {
     font-family: 'Spoqa Han Sans','Noto Sans KR', sans-serif;
+    height: 100vh;
   }
   ol,ul,li {
     list-style: none;

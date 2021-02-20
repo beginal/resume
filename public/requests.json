@@ -28,5 +28,52 @@
 			"description": "4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.",
 			"stack": ["React", "SCSS"]
 		}
+	],
+	"skills": [
+		{
+			"title": "JavaScript",
+			"logo": "",
+			"description": "JAVASCRIPT, ECMASCRIPT, WEBPACK 과 BABEL등을 위주로 개발하며 모듈화를 통한 플러그인 개발 및 SDK도 가능합니다.브라우저 환경의 JAVASCRIPT의 경우 브라우저 호환성을 중요시하여 IE 환경에서도 정상 작동하도록 개발하고 있으며 최신 문법인 ES6 또한 자유자재로 사용하고 있습니다"
+		},
+		{
+			"title": "React",
+			"logo": "",
+			"description": "어느정도 합니다.2"
+		},
+		{
+			"title": "Next.js",
+			"logo": "",
+			"description": "어느정도 합니다.3"
+		},
+		{
+			"title": "Redux",
+			"logo": "",
+			"description": "어느정도 합니다.4"
+		},
+		{
+			"title": "styled-components",
+			"logo": "",
+			"description": "어느정도 합니다.5"
+		},
+		{
+			"title": "SASS",
+			"logo": "",
+			"description": "어느정도 합니다.5"
+		},
+		{
+			"title": "Python",
+			"logo": "",
+			"description": "어느정도 합니다.5"
+		},
+		{
+			"title": "AutoHotkey",
+			"logo": "",
+			"description": "어느정도 합니다.5"
+		},
+		{
+			"title": "Git",
+			"logo": "",
+			"description": "어느정도 합니다.5"
+		}
 	]
 }
