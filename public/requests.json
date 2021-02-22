@@ -2,31 +2,50 @@
 	"project": [
 		{
 			"title": "Watcha And Chill",
-			"image": "https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
-			"intro": "Watcha Pedia Clone Project입니다.",
+			"image": [
+				"./img/preview.png",
+				"https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
+				"./img/preview.png",
+				"https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
+				"./img/preview.png"
+			],
+			"intro": "[Watcha Pedia Cloneing Project]",
 			"description": "4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.",
-			"stack": ["React", "SCSS"]
+			"stack": ["React", "SCSS"],
+			"link": {
+				"github": "https://github.com/beginal/13-watchandchill-frontend",
+				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
+			}
 		},
 		{
 			"title": "DEV101",
-			"image": "https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
+			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
 			"intro": "CLASS101 Clone Project입니다.",
 			"description": "4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.",
-			"stack": ["React", "Styled-components", "Redux", "Axios", "JWT"]
+			"stack": ["React", "Styled-components", "Redux", "Axios", "JWT"],
+			"link": {
+				"github": "https://github.com/beginal/13-watchandchill-frontend",
+				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
+			}
 		},
 		{
 			"title": "Rencar Mobile App",
-			"image": "https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
+			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
 			"intro": "Rencar 사고대차 서비스 모바일버전입니다.",
 			"description": "3명의 FE와 1명의 BE가 협업하여 제작했습니다.",
-			"stack": ["React", "Next.js", "SCSS", "Mobx", "Axios", "JWT"]
+			"stack": ["React", "Next.js", "SCSS", "Mobx", "Axios", "JWT"],
+			"link": {}
 		},
 		{
 			"title": "Watcha And Chill",
-			"image": "https://taegon.kim/wp-content/uploads/2018/05/image-5.png",
+			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
 			"intro": "Watcha Pedia Clone Project입니다.",
 			"description": "4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.",
-			"stack": ["React", "SCSS"]
+			"stack": ["React", "SCSS"],
+			"link": {
+				"github": "https://github.com/beginal/13-watchandchill-frontend",
+				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
+			}
 		}
 	],
 	"skills": [

@@ -49,6 +49,7 @@ const NavWrap = styled.nav<NavType>`
 	top: 0;
 	background: rgba(184, 184, 184, 0.8);
 	padding: 8px 30px;
+	z-index: 10;
 	.navBar {
 		position: relative;
 		display: flex;

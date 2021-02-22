@@ -62,11 +62,11 @@ const SkillSetWrap = styled.div<SkillSetType>`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: ${({ descOver }) => (descOver ? "#f0ffe3" : "#ededed")};
+		background: ${({ descOver }) => (descOver ? "#ffffff" : "#ededed")};
 		color: #7c7a7a;
 		border-radius: 4px;
 		font-size: 0.8rem;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.5;
 		width: 100%;
 		min-height: 100px;
@@ -95,7 +95,7 @@ const SkillSetWrap = styled.div<SkillSetType>`
 				padding: 15px;
 			}
 			&:hover {
-				background: #f0ffe3;
+				background: #ffffff;
 			}
 		}
 	}

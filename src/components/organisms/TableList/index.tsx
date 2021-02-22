@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Content from "components/molecules/Content";
+import TableItems from "components/molecules/TableItem";
 
 export interface TableListProps {
 	title: string;
@@ -36,29 +37,8 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, item, tailTex
 							</tr>
 						</thead>
 						<tbody>
-							{item.map(({ title, image, intro, description, stack }) => (
-								<tr>
-									<th className="title">
-										<div>
-											<span>{title}</span>
-											{image && <img src={image} alt={title} />}
-										</div>
-									</th>
-									<td className="descirption">
-										<div>
-											<div>
-												<div>{intro}</div>
-												<p>{description}</p>
-											</div>
-											<div>
-												{stack.map((item: string) => (
-													<span className="skillBox">{item}</span>
-												))}
-											</div>
-										</div>
-									</td>
-									<td className="etc">더보기</td>
-								</tr>
+							{item.map((props) => (
+								<TableItems {...props} />
 							))}
 						</tbody>
 					</table>
@@ -81,57 +61,6 @@ const TableListWrap = styled.div<TableListType>`
 	div {
 		table {
 			width: 100%;
-			tr {
-				border-bottom: 1px solid gray;
-				height: 100%;
-				th {
-					padding: 10px 0;
-					vertical-align: middle;
-				}
-				.title,
-				.etc {
-					vertical-align: middle;
-					text-align: center;
-				}
-				.title {
-					div {
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
-						font-weight: 700;
-						img {
-							width: 160px;
-							height: 150px;
-						}
-						span {
-							padding: 5px 0;
-						}
-					}
-				}
-				.descirption {
-					> div {
-						display: flex;
-						flex-direction: column;
-						justify-content: space-between;
-						height: 200px;
-						line-height: 1.3;
-					}
-					padding: 15px 2px;
-					.skillBox {
-						text-transform: uppercase;
-						background: #c5c6c4;
-						font-weight: 300;
-						border-radius: 4px;
-						font-size: 0.6rem;
-						line-height: 0.8;
-						color: white;
-						padding: 2px 6px;
-						padding-bottom: 4px;
-						margin: 2px;
-					}
-				}
-			}
 		}
 	}
 	.tales {
