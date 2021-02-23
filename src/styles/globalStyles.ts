@@ -25,6 +25,13 @@ ${reset}
     width: inherit;
     height: inherit;
   }
+  .tales {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #bbbbbb;
+  }
 `;
 
 export default GlobalStyle;

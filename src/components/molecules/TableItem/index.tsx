@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { AiFillYoutube, AiOutlineGithub } from "react-icons/ai";
 import Label from "components/atoms/Label";
 import styled from "styled-components";
 import Modal from "../Modal";
@@ -7,12 +8,14 @@ interface Props {
 	title: string;
 	image: string[];
 	intro: string;
-	description: string;
+	description: string[];
+	details: string[];
 	stack: string[];
+	period: string;
 	link: { github: string; youtube: string };
 }
 
-const TableItems = ({ title, image, intro, description, stack, link }: Props) => {
+const TableItems = ({ title, image, intro, description, details, stack, period, link }: Props) => {
 	const [visiable, setVisable] = useState(false);
 
 	const handleModal = () => {
@@ -31,7 +34,10 @@ const TableItems = ({ title, image, intro, description, stack, link }: Props) =>
 				<div>
 					<div className="description_text">
 						<div>{intro}</div>
-						<div>{description}</div>
+						{description.map((item) => (
+							<div>{item}</div>
+						))}
+						<div className="period">{period}</div>
 					</div>
 					<div>
 						{stack.map((item: string) => (
@@ -46,19 +52,19 @@ const TableItems = ({ title, image, intro, description, stack, link }: Props) =>
 				{link.github && (
 					<div>
 						<a href={link.github} target="_blank">
-							Git
+							<AiOutlineGithub />
 						</a>
 					</div>
 				)}
 				{link.youtube && (
 					<div>
-						<a href={link.youtube} target="_blank">
-							youtube
+						<a href={link.youtube}>
+							<AiFillYoutube />
 						</a>
 					</div>
 				)}
 			</td>
-			{visiable && <Modal image={image} title={title} setVisable={setVisable} />}
+			{visiable && <Modal image={image} title={title} details={details} setVisable={setVisable} />}
 		</TableItemWrap>
 	);
 };
@@ -70,7 +76,6 @@ const TableItemWrap = styled.tr`
 	height: 100%;
 	th {
 		padding: 20px 0;
-		vertical-align: middle;
 	}
 	.title,
 	.etc {
@@ -78,6 +83,7 @@ const TableItemWrap = styled.tr`
 		text-align: center;
 	}
 	.title {
+		margin: 0 auto;
 		div {
 			cursor: pointer;
 			display: flex;
@@ -86,39 +92,75 @@ const TableItemWrap = styled.tr`
 			align-items: center;
 			font-weight: 700;
 			img {
+				width: 160px;
+				height: 120px;
 				opacity: 0.9;
-				width: 180px;
-				height: 180px;
 			}
 			span {
+				width: 160px;
+				height: 120px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				z-index: 3;
-				background: rgba(255, 255, 255, 0.6);
+				background: rgba(0, 0, 0, 0.4);
 				box-shadow: rgba(0, 0, 0, 0.15) 4px 4px;
-				color: gray;
+				font-weight: 400;
+				color: white;
 				position: absolute;
+				transition: all 0.3s;
 				padding: 5px 0;
+				&:hover {
+					background: rgba(0, 0, 0, 0.1);
+					color: black;
+				}
 			}
 		}
 	}
 	.descirption {
+		height: 1px;
+		// 높이 꼼수
 		> div {
 			display: flex;
 			flex-direction: column;
+			height: 100%;
 			padding: 1px 5px;
 			justify-content: space-between;
-			height: 180px;
 			line-height: 1.3;
 			.description_text {
 				div {
-					font-size: 0.9rem;
+					font-size: 0.85rem;
+					line-height: 1.3;
 					&:first-of-type {
 						font-size: 1rem;
 						font-weight: 500;
 						padding-bottom: 4px;
 					}
 				}
+				.period {
+					padding: 10px 0;
+					color: gray;
+					font-size: 0.76rem;
+				}
 			}
 		}
 		padding: 15px 2px;
+	}
+	.etc {
+		div {
+			font-size: 30px;
+			&:first-of-type {
+				transition: all 0.3s;
+				&:hover {
+					color: gray;
+				}
+			}
+			&:last-of-type {
+				transition: all 0.3s;
+				&:hover {
+					color: red;
+				}
+			}
+		}
 	}
 `;

@@ -18,7 +18,9 @@ const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
 
 export default Header;
 
-type HeaderType = {};
+type HeaderType = {
+	abc?: any;
+};
 
 // style 영역
 const HeaderWrap = styled.header<HeaderType>`

@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ github, blog, ...props }) => {
 
 	return (
 		<FooterWrap {...styleProps}>
-			<div>
+			{/* <div>
 				<ul>
 					{LinkList.map(({ title, link }) => (
 						<li key={title}>
@@ -46,18 +46,16 @@ export const Footer: React.FC<FooterProps> = ({ github, blog, ...props }) => {
 						</li>
 					))}
 				</ul>
-			</div>
+			</div> */}
 			<p className="line"></p>
-			<div> Ⓒ 2021. HAM JUN HO PORTFOLIO</div>
+			<div> Ⓒ 2021. HAM JUN HO 현재 페이지는 아직 미완성입니다.</div>
 		</FooterWrap>
 	);
 };
 export default Footer;
 
-type FooterType = {};
-
 // style 영역
-const FooterWrap = styled.footer<FooterType>`
+const FooterWrap = styled.footer`
 	position: relative;
 	bottom: 50px;
 	font-size: 0.7rem;

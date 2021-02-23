@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
+import { CgClose } from "react-icons/cg";
 
 interface Props {
 	image: string[];
 	title: string;
+	details: string[];
 	setVisable: (arg0: boolean) => void;
 }
 
-const Modal = ({ image, title, setVisable }: Props) => {
+const Modal = ({ image, title, details, setVisable }: Props) => {
 	const imageRef = useRef(null);
 	const [currentImageSrc, setCurrentImageSrc] = useState(0);
 	const notRunningEvent = (event: any) => {
@@ -29,7 +31,10 @@ const Modal = ({ image, title, setVisable }: Props) => {
 	return (
 		<Background onClick={() => setVisable(false)}>
 			<ModalForm onClick={notRunningEvent}>
-				<div>{title}</div>
+				<div className="closeBtn" onClick={() => setVisable(false)}>
+					<CgClose />
+				</div>
+				<h2 className="title">{title}</h2>
 				<div className="imageList">
 					<img src={image[currentImageSrc]} ref={imageRef} />
 					<div>
@@ -38,8 +43,15 @@ const Modal = ({ image, title, setVisable }: Props) => {
 								<img onMouseOver={() => imageReplece(i)} src={v} />
 							))}
 					</div>
+					<span className="tales">하단 각 이미지에 마우스를 올려보세요.</span>
 				</div>
-				<p>마우스를 올리면 이미지가 바뀝니다.</p>
+				<div className="details">
+					<ul>
+						{details.map((detail: string) => (
+							<li>{detail}</li>
+						))}
+					</ul>
+				</div>
 			</ModalForm>
 		</Background>
 	);
@@ -52,7 +64,7 @@ const Background = styled.div`
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.7);
 	overflow: hidden;
 	top: 0;
 	left: 0;
@@ -62,6 +74,7 @@ const Background = styled.div`
 `;
 
 const ModalForm = styled.div`
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -71,13 +84,20 @@ const ModalForm = styled.div`
 	min-height: 400px;
 	padding: 20px 10px;
 	border-radius: 4px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	.title {
+		font-size: 1.6rem;
+		font-weight: 600;
+		padding: 10px;
+	}
 	.imageList {
-		width: 550px;
+		width: 430px;
 		display: flex;
+		justify-content: center;
 		flex-wrap: wrap;
 		img {
 			width: 100%;
-			height: 300px;
+			height: 240px;
 			padding: 5px;
 		}
 		div {
@@ -92,6 +112,39 @@ const ModalForm = styled.div`
 					opacity: 1;
 				}
 			}
+		}
+	}
+	.details {
+		border-top: 1px solid gray;
+		margin-top: 10px;
+		overflow: scroll;
+		height: 260px;
+		ul {
+			padding: 10px;
+			box-sizing: border-box;
+			font-size: 0.85rem;
+			li {
+				margin-left: 20px;
+				list-style: disc;
+				line-height: 1.3rem;
+				font-weight: 400;
+				padding: 5px 0;
+			}
+		}
+	}
+	.closeBtn {
+		position: absolute;
+		top: 20px;
+		right: 15px;
+		padding: 10px;
+		color: gray;
+		background: white;
+		font-size: 30px;
+		transition: all 0.3s;
+		&:hover {
+			cursor: pointer;
+			color: red;
+			transform: rotate(-90deg);
 		}
 	}
 	z-index: 20;

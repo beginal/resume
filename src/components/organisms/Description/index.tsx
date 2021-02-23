@@ -22,10 +22,8 @@ const Description: React.FC<DescriptionProps> = ({ title, children, ...props }) 
 
 export default Description;
 
-type DescriptionType = {};
-
 // style 영역
-const DescriptionWrap = styled.div<DescriptionType>`
+const DescriptionWrap = styled.div`
 	display: flex;
 	justify-content: center;
 	padding-top: 100px;

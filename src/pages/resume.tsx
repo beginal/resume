@@ -10,7 +10,7 @@ import { getProjectList, getSkillsList } from "redux/reducer/resumeReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/store";
 import SkillSet from "components/organisms/Skillset";
-import Footer from "components/organisms/Footer/indes";
+import Footer from "components/organisms/Footer";
 
 const resume: React.FC = () => {
 	const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const resume: React.FC = () => {
 					title="PROJECT"
 					item={project}
 					desc="프로젝트에 대한 설명설명"
-					tailText="이미지를 클릭하면 커집니다."
+					tailText="이미지를 클릭하시면 각 프로젝트에 대한 자세한 설명을 확인하실수 있습니다."
 				/>
 				<SkillSet
 					title="SKILL"
@@ -73,7 +73,7 @@ const Wrap = styled.div`
 	main {
 		display: flex;
 		flex-direction: column;
-		margin: 0 85px;
+		margin: 0 95px;
 		padding-bottom: 120px;
 	}
 `;

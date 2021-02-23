@@ -22,10 +22,8 @@ const Content: React.FC<ContentProps> = ({ title, desc, ...props }) => {
 
 export default Content;
 
-type ContentType = {};
-
 // style 영역
-const ContentWrap = styled.div<ContentType>`
+const ContentWrap = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding-top: 100px;

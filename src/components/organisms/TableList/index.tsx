@@ -50,24 +50,15 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, item, tailTex
 };
 export default TableList;
 
-type TableListType = {};
-
 // style 영역
-const TableListWrap = styled.div<TableListType>`
+const TableListWrap = styled.div`
 	padding: 1rem;
 	background: white;
-	border-radius: 4px;
+	border-radius: 3px;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 	div {
 		table {
 			width: 100%;
 		}
-	}
-	.tales {
-		text-align: center;
-		padding-top: 16px;
-		font-size: 0.75rem;
-		font-weight: 300;
-		color: #bbbbbb;
 	}
 `;

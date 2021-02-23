@@ -12,27 +12,32 @@ export const Nav: React.FC<NavProps> = ({ navTitle, firstMenu, lastMenu, ...prop
 		navTitle,
 		...props,
 	};
+
+	const moveEvent = (id?: string) => {
+		window.scrollTo({
+			top: id ? document.getElementById(id)?.offsetTop : 0,
+			left: 0,
+			behavior: "smooth",
+		});
+	};
+
 	return (
 		<NavWrap {...styleProps}>
 			<div className="navBar">
 				<div>
 					<ul>
 						{firstMenu.map((item) => (
-							<li>
-								<a href={`#${item}`}>{item}</a>
-							</li>
+							<li onClick={() => moveEvent(item)}>{item}</li>
 						))}
 					</ul>
 				</div>
-				<div className="navTitle">
-					<a href="#">{navTitle}</a>
+				<div className="navTitle" onClick={() => moveEvent()}>
+					{navTitle}
 				</div>
 				<div>
 					<ul>
 						{lastMenu?.map((item) => (
-							<li>
-								<a href={`#${item}`}>{item}</a>
-							</li>
+							<li onClick={() => moveEvent(item)}>{item}</li>
 						))}
 					</ul>
 				</div>
@@ -41,10 +46,8 @@ export const Nav: React.FC<NavProps> = ({ navTitle, firstMenu, lastMenu, ...prop
 	);
 };
 
-type NavType = {};
-
 // style 영역
-const NavWrap = styled.nav<NavType>`
+const NavWrap = styled.nav`
 	position: sticky;
 	top: 0;
 	background: rgba(184, 184, 184, 0.8);
@@ -69,22 +72,22 @@ const NavWrap = styled.nav<NavType>`
 			ul {
 				display: flex;
 				li {
+					padding: 8px 10px;
+					font-size: 0.9rem;
+					cursor: pointer;
 					&:hover {
 						color: #343a40;
-					}
-					a {
-						font-size: 0.9rem;
-						padding: 8px 10px;
 					}
 				}
 			}
 		}
-		.navTitle {
-			padding: 0 20px;
-			min-width: auto;
-			font-size: 1.5rem;
-			font-weight: 600;
-			color: #000000;
-		}
+	}
+	.navTitle {
+		padding: 0 20px;
+		min-width: auto;
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #000000;
+		cursor: pointer;
 	}
 `;
