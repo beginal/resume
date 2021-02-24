@@ -3,6 +3,7 @@ import { Title } from "components/atoms/Title";
 import Description from "components/organisms/Description";
 import Header from "components/organisms/Header";
 import { Nav } from "components/organisms/Nav";
+import { FloatingButton } from "components/atoms/Button";
 import TableList from "components/organisms/TableList";
 import styled from "styled-components";
 import axios from "axios";
@@ -11,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/store";
 import SkillSet from "components/organisms/Skillset";
 import Footer from "components/organisms/Footer";
+import { SiNotion } from "react-icons/si";
 
 const resume: React.FC = () => {
 	const dispatch = useDispatch();
@@ -18,14 +20,12 @@ const resume: React.FC = () => {
 		(async function () {
 			const res = await axios.get(`./requests.json`);
 			const data = res.data;
-			console.log(data);
 			dispatch(getProjectList(data.project));
 			dispatch(getSkillsList(data.skills));
 		})();
 	}, []);
 
 	const { project, skills } = useSelector((state: RootState) => state.resumeReducer);
-	console.log(project);
 	return (
 		<Wrap>
 			<Header>
@@ -46,6 +46,13 @@ const resume: React.FC = () => {
 						자동화 하는 일을 좋아합니다. 자주 쓰는 조합키나 PC 사용 패턴 등을 단축키로 등록해두고
 						편하게 사용합니다. 팀으로서 움직이는 개발자인 만큼 협업을 중요하게 생각합니다.
 					</span>
+
+					<p style={{ color: "red", fontSize: "0.9rem" }}>
+						2021.02.24 현재 페이지는 아직 미완성 상태입니다. Project각 부분 클릭시 메인이미지
+						Slider, Content탭, Youtube 버튼 클릭시 모달에서 자체실행 등의 기능들을 추가할
+						예정입니다.또한 Mobile, Tablet 반응형은 곧 작업 예정입니다.사이트 우측 하단의 Notion
+						링크를 클릭하여 노션 이력서를 확인해주시면 감사하겠습니다.
+					</p>
 				</Description>
 				<TableList
 					title="PROJECT"
@@ -60,9 +67,12 @@ const resume: React.FC = () => {
 					item={skills}
 				/>
 				<Description title="CONTACT">
-					<span>정보입니다.</span>
+					<span>읽어주셔서 감사합니다.</span>
 				</Description>
 			</main>
+			<FloatingButton link="https://www.notion.so/page0blue/Ham-Jun-Ho-73ff9b8c6a9f471392614cc8b8d7a80e">
+				<SiNotion />
+			</FloatingButton>
 			<Footer github="https://github.com/beginal" />
 		</Wrap>
 	);

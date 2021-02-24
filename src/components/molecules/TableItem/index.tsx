@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { AiFillYoutube, AiOutlineGithub } from "react-icons/ai";
 import Label from "components/atoms/Label";
 import styled from "styled-components";
@@ -26,7 +26,7 @@ const TableItems = ({ title, image, intro, description, details, stack, period, 
 		<TableItemWrap>
 			<th className="title">
 				<div onClick={handleModal}>
-					<span>{title}</span>
+					{/* <span>{title}</span> */}
 					{image && <img src={image[0]} alt={title} />}
 				</div>
 			</th>
@@ -34,16 +34,14 @@ const TableItems = ({ title, image, intro, description, details, stack, period, 
 				<div>
 					<div className="description_text">
 						<div>{intro}</div>
-						{description.map((item) => (
-							<div>{item}</div>
+						{description.map((item, i) => (
+							<div key={i}>{item}</div>
 						))}
 						<div className="period">{period}</div>
 					</div>
 					<div>
-						{stack.map((item: string) => (
-							<>
-								<Label type="skill" text={item} />
-							</>
+						{stack.map((item: string, i) => (
+							<Label key={i} type="skill" text={item} />
 						))}
 					</div>
 				</div>
@@ -64,7 +62,11 @@ const TableItems = ({ title, image, intro, description, details, stack, period, 
 					</div>
 				)}
 			</td>
-			{visiable && <Modal image={image} title={title} details={details} setVisable={setVisable} />}
+			<td>
+				{visiable && (
+					<Modal image={image} title={title} details={details} setVisable={setVisable} />
+				)}
+			</td>
 		</TableItemWrap>
 	);
 };
@@ -77,12 +79,12 @@ const TableItemWrap = styled.tr`
 	th {
 		padding: 20px 0;
 	}
-	.title,
+	> .title,
 	.etc {
 		vertical-align: middle;
 		text-align: center;
 	}
-	.title {
+	> .title {
 		margin: 0 auto;
 		div {
 			cursor: pointer;
@@ -93,12 +95,12 @@ const TableItemWrap = styled.tr`
 			font-weight: 700;
 			img {
 				width: 160px;
-				height: 120px;
+				height: 110px;
 				opacity: 0.9;
 			}
 			span {
 				width: 160px;
-				height: 120px;
+				height: 110px;
 				display: flex;
 				align-items: center;
 				justify-content: center;

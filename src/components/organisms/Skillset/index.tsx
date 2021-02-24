@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Content from "components/molecules/Content";
+import { skillsType } from "types";
 
 export interface SkillSetProps {
 	title: string;
 	desc: string;
 	initialDesc: string;
-	item: any[];
+	item: skillsType[];
 }
 
 export const SkillSet: React.FC<SkillSetProps> = ({ title, desc, item, initialDesc, ...props }) => {
@@ -32,8 +33,9 @@ export const SkillSet: React.FC<SkillSetProps> = ({ title, desc, item, initialDe
 			<SkillSetWrap {...styleProps}>
 				<div className="skillDesc">{skillDesc}</div>
 				<div className="skillList">
-					{item.map(({ title, logo, description }) => (
+					{item.map(({ title, logo, description }, i) => (
 						<div
+							key={i}
 							onMouseOver={() => handleDesc(description)}
 							onMouseOut={() => handleDesc(initialDesc)}
 						>
@@ -90,7 +92,12 @@ const SkillSetWrap = styled.div<SkillSetType>`
 			margin-top: 0;
 			font-size: 0.7rem;
 			flex-grow: 1;
-			height: 40px;
+			height: 60px;
+			padding: 10px;
+			img {
+				/* width: 100%; */
+				height: 100%;
+			}
 			span {
 				padding: 15px;
 			}

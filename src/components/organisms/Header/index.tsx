@@ -18,12 +18,8 @@ const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
 
 export default Header;
 
-type HeaderType = {
-	abc?: any;
-};
-
 // style 영역
-const HeaderWrap = styled.header<HeaderType>`
+const HeaderWrap = styled.header`
 	.container {
 		padding: 16rem 4rem;
 		background: url("./img/header.png") no-repeat center center/cover;

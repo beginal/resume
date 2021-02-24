@@ -19,7 +19,9 @@
 			],
 			"stack": ["React", "Typescript", "Styled Components", "Storybook", "Redux", "Axios"],
 			"period": "2021.02.21 ~ 진행중",
-			"link": {}
+			"link": {
+				"github": "https://github.com/beginal/resume"
+			}
 		},
 		{
 			"title": "Rencar Mobile App",
@@ -92,65 +94,53 @@
 				"github": "https://github.com/beginal/13-watchandchill-frontend",
 				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
 			}
-		},
-		{
-			"title": "Watcha And Chill",
-			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
-			"intro": "Watcha Pedia Clone Project입니다.",
-			"description": ["4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.", ""],
-			"stack": ["React", "SCSS"],
-			"period": "2020.10.19 ~ 10.30",
-			"link": {
-				"github": "https://github.com/beginal/13-watchandchill-frontend",
-				"youtube": "https://www.youtu.be/1D2MAF9qgvQ"
-			}
 		}
 	],
 	"skills": [
 		{
 			"title": "JavaScript",
-			"logo": "",
-			"description": "JAVASCRIPT, ECMASCRIPT, WEBPACK 과 BABEL등을 위주로 개발하며 모듈화를 통한 플러그인 개발 및 SDK도 가능합니다.브라우저 환경의 JAVASCRIPT의 경우 브라우저 호환성을 중요시하여 IE 환경에서도 정상 작동하도록 개발하고 있으며 최신 문법인 ES6 또한 자유자재로 사용하고 있습니다"
+			"logo": "./img/skills/js.png",
+			"description": "Javascript의 중요한 개념들(this, 비동기 등)을 이해하고 있습니다. ES5와 ES6 이후의 차이점에 대해 이해하며, 자바스크립트의 최신문법을 사용하는것을 좋아합니다."
 		},
 		{
 			"title": "React",
-			"logo": "",
-			"description": "어느정도 합니다.2"
+			"logo": "./img/skills/react.png",
+			"description": "React를 자유자재로 사용하여 혼자서 프로젝트를 진행할 수 있습니다. TodoList, 여러번의 클론코딩, 토이프로젝트 경험이 있습니다. React LifeCycle을 이해하고 있으며 적재적소에 사용 할 수 있습니다.useState, useEffect 등 여러가지 Hooks를 자유롭게 사용할 줄 알며 Custom Hooks을 만들수 있습니다."
 		},
 		{
 			"title": "Next.js",
-			"logo": "",
-			"description": "어느정도 합니다.3"
+			"logo": "./img/skills/nextjs.png",
+			"description": "Next.js의 getServerSideProps를 사용해 SSR을 구현할 수 있습니다."
 		},
 		{
 			"title": "Redux",
-			"logo": "",
-			"description": "어느정도 합니다.4"
+			"logo": "./img/skills/redux.png",
+			"description": "Redux로 State를 관리하는데 익숙합니다. Redux-ToolKit을 주로 사용합니다.Redux를 사용해 CRUD를 구현할 수 있습니다."
 		},
 		{
 			"title": "styled-components",
-			"logo": "",
-			"description": "어느정도 합니다.5"
+			"logo": "./img/skills/styled.png",
+			"description": "Styled-Components의 Props를 사용하여 동적인 스타일링을 적용할 수 있습니다.Theme을 사용하는것을 좋아합니다."
 		},
 		{
 			"title": "SASS",
-			"logo": "",
-			"description": "어느정도 합니다.5"
+			"logo": "./img/skills/sass.png",
+			"description": "변수를 사용하여 유지보수성을 높일수 있습니다. mixin extend 등의 함수를 활용할 수 있습니다."
 		},
 		{
 			"title": "Python",
-			"logo": "",
-			"description": "어느정도 합니다.5"
+			"logo": "./img/skills/python.png",
+			"description": "Python을 활용하여 간단한 크롤링, 자동화를 제작해본 경험이 있습니다."
 		},
 		{
 			"title": "AutoHotkey",
-			"logo": "",
-			"description": "어느정도 합니다.5"
+			"logo": "./img/skills/ahk.png",
+			"description": "지금도 오토핫키를 이용한 자동화 프로그램을 직접 만들어서 사용중입니다."
 		},
 		{
 			"title": "Git",
-			"logo": "",
-			"description": "어느정도 합니다.5"
+			"logo": "./img/skills/git.png",
+			"description": "Git을 활용해 Branch를 나눠 협업을 진행해본 경험이 있습니다."
 		}
 	]
 }

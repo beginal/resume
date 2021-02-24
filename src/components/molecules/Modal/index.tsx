@@ -12,7 +12,8 @@ interface Props {
 const Modal = ({ image, title, details, setVisable }: Props) => {
 	const imageRef = useRef(null);
 	const [currentImageSrc, setCurrentImageSrc] = useState(0);
-	const notRunningEvent = (event: any) => {
+
+	const notRunningEvent = (event: React.MouseEvent<HTMLDivElement>) => {
 		event.stopPropagation();
 	};
 
@@ -31,26 +32,28 @@ const Modal = ({ image, title, details, setVisable }: Props) => {
 	return (
 		<Background onClick={() => setVisable(false)}>
 			<ModalForm onClick={notRunningEvent}>
-				<div className="closeBtn" onClick={() => setVisable(false)}>
-					<CgClose />
+				<div className="modalHeader" onClick={() => setVisable(false)}>
+					<h2 className="title">{title}</h2>
+					<CgClose className="closeBtn" />
 				</div>
-				<h2 className="title">{title}</h2>
-				<div className="imageList">
-					<img src={image[currentImageSrc]} ref={imageRef} />
-					<div>
-						{image &&
-							image.map((v: string, i: number) => (
-								<img onMouseOver={() => imageReplece(i)} src={v} />
-							))}
+				<div className="modalBody">
+					<div className="imageList">
+						<img src={image[currentImageSrc]} ref={imageRef} />
+						<div>
+							{image &&
+								image.map((v: string, i: number) => (
+									<img key={i} onMouseOver={() => imageReplece(i)} src={v} />
+								))}
+						</div>
+						<span className="tales">각 이미지에 마우스를 올려보세요.</span>
 					</div>
-					<span className="tales">하단 각 이미지에 마우스를 올려보세요.</span>
-				</div>
-				<div className="details">
-					<ul>
-						{details.map((detail: string) => (
-							<li>{detail}</li>
-						))}
-					</ul>
+					<div className="details">
+						<ul>
+							{details.map((detail: string, i) => (
+								<li key={i}>{detail}</li>
+							))}
+						</ul>
+					</div>
 				</div>
 			</ModalForm>
 		</Background>
@@ -61,11 +64,10 @@ export default Modal;
 
 const Background = styled.div`
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	position: fixed;
 	background: rgba(0, 0, 0, 0.7);
-	overflow: hidden;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -74,77 +76,86 @@ const Background = styled.div`
 `;
 
 const ModalForm = styled.div`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background: white;
-	width: 650px;
-	min-height: 400px;
-	padding: 20px 10px;
-	border-radius: 4px;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-	.title {
-		font-size: 1.6rem;
-		font-weight: 600;
-		padding: 10px;
-	}
-	.imageList {
-		width: 430px;
+	width: 580px;
+	.modalHeader {
 		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		img {
-			width: 100%;
-			height: 240px;
-			padding: 5px;
+		align-items: center;
+		justify-content: space-between;
+		background: white;
+		border-bottom: 1px solid #dee2e6;
+		border-radius: 3px 3px 0 0;
+		width: 100%;
+		padding: 15px;
+		/* margin-bottom: 10px; */
+		.title {
+			padding-left: 10px;
+			font-size: 1.4rem;
+			font-weight: 500;
 		}
-		div {
-			width: 100%;
+		.closeBtn {
+			color: gray;
+			background: white;
+			font-size: 25px;
+			transition: all 0.3s;
+			&:hover {
+				cursor: pointer;
+				color: red;
+				transform: rotate(-90deg);
+			}
+		}
+	}
+	.modalBody {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: white;
+		min-height: 400px;
+		padding: 10px 30px 20px 30px;
+		border-radius: 0 0 3px 3px;
+		.imageList {
+			width: 430px;
 			display: flex;
 			justify-content: center;
+			flex-wrap: wrap;
 			img {
-				opacity: 0.6;
-				width: 80px;
-				height: 50px;
-				&:hover {
-					opacity: 1;
+				width: 100%;
+				height: 240px;
+				padding: 5px;
+			}
+			div {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				img {
+					opacity: 0.6;
+					width: 80px;
+					height: 50px;
+					&:hover {
+						opacity: 1;
+					}
 				}
 			}
 		}
-	}
-	.details {
-		border-top: 1px solid gray;
-		margin-top: 10px;
-		overflow: scroll;
-		height: 260px;
-		ul {
-			padding: 10px;
-			box-sizing: border-box;
-			font-size: 0.85rem;
-			li {
-				margin-left: 20px;
-				list-style: disc;
-				line-height: 1.3rem;
-				font-weight: 400;
-				padding: 5px 0;
+		.details {
+			border-top: 1px solid #dee2e6;
+			margin-top: 10px;
+			overflow: scroll;
+			height: 260px;
+			color: #333333;
+			ul {
+				padding: 10px;
+				box-sizing: border-box;
+				font-size: 0.85rem;
+				li {
+					margin-left: 20px;
+					list-style: disc;
+					line-height: 1.3rem;
+					font-weight: 400;
+					padding: 5px 0;
+				}
 			}
-		}
-	}
-	.closeBtn {
-		position: absolute;
-		top: 20px;
-		right: 15px;
-		padding: 10px;
-		color: gray;
-		background: white;
-		font-size: 30px;
-		transition: all 0.3s;
-		&:hover {
-			cursor: pointer;
-			color: red;
-			transform: rotate(-90deg);
 		}
 	}
 	z-index: 20;

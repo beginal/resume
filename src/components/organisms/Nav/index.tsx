@@ -26,8 +26,10 @@ export const Nav: React.FC<NavProps> = ({ navTitle, firstMenu, lastMenu, ...prop
 			<div className="navBar">
 				<div>
 					<ul>
-						{firstMenu.map((item) => (
-							<li onClick={() => moveEvent(item)}>{item}</li>
+						{firstMenu.map((item, i) => (
+							<li key={i} onClick={() => moveEvent(item)}>
+								{item}
+							</li>
 						))}
 					</ul>
 				</div>
@@ -36,8 +38,10 @@ export const Nav: React.FC<NavProps> = ({ navTitle, firstMenu, lastMenu, ...prop
 				</div>
 				<div>
 					<ul>
-						{lastMenu?.map((item) => (
-							<li onClick={() => moveEvent(item)}>{item}</li>
+						{lastMenu?.map((item, i) => (
+							<li key={i} onClick={() => moveEvent(item)}>
+								{item}
+							</li>
 						))}
 					</ul>
 				</div>

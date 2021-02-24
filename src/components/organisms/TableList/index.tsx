@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Content from "components/molecules/Content";
 import TableItems from "components/molecules/TableItem";
+import { projectType } from "types";
 
 export interface TableListProps {
 	title: string;
 	desc: string;
-	item: Array<any>;
+	item: projectType[];
 	tailText?: string;
 }
 
@@ -37,8 +38,8 @@ export const TableList: React.FC<TableListProps> = ({ title, desc, item, tailTex
 							</tr>
 						</thead>
 						<tbody>
-							{item.map((props) => (
-								<TableItems {...props} />
+							{item.map((props, i) => (
+								<TableItems key={i} {...props} />
 							))}
 						</tbody>
 					</table>

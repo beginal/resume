@@ -1,20 +1,13 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
+import { projectType, skillsType } from "types";
 
 const initialState = {
 	project: [],
 	skills: [],
 };
 
-interface project {
-	title: string;
-	image?: string;
-	intro: string;
-	description: string;
-	stack: string;
-}
-
-export const getProjectList = createAction<project>("GET_PROJECT_LIST");
-export const getSkillsList = createAction<any[]>("GET_SKILLS_LIST");
+export const getProjectList = createAction<projectType>("GET_PROJECT_LIST");
+export const getSkillsList = createAction<skillsType>("GET_SKILLS_LIST");
 
 const ResumeReducer = createReducer(initialState, {
 	[getProjectList.type]: (state, { payload }) => {

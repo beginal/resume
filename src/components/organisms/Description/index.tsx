@@ -14,7 +14,7 @@ const Description: React.FC<DescriptionProps> = ({ title, children, ...props }) 
 		<DescriptionWrap id={title} {...styleProps}>
 			<div>
 				<h2>{title}</h2>
-				<p>{children}</p>
+				<div>{children}</div>
 			</div>
 		</DescriptionWrap>
 	);
@@ -41,7 +41,7 @@ const DescriptionWrap = styled.div`
 			font-size: 35px;
 			font-weight: 800;
 		}
-		p {
+		div {
 			margin-top: 20px;
 			text-align: center;
 			font-size: 17px;
