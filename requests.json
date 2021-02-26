@@ -49,7 +49,7 @@
 				"./img/dev101_4.png",
 				"./img/dev101_5.png"
 			],
-			"intro": "Watcha Pedia Cloneing Project",
+			"intro": "Class101 Clone Project",
 			"description": [
 				"온라인 클래스 플랫폼 Class101의 클론 프로젝트입니다..",
 				"4명의 프론트엔드, 2명의 백엔드가 2주의 기간동안 열심히 만들었습니다."
@@ -68,7 +68,7 @@
 			"period": "2020.11.02 ~ 11.13",
 			"link": {
 				"github": "https://github.com/beginal/13-watchandchill-frontend",
-				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
+				"youtube": "VL2Rvn3d1os"
 			}
 		},
 		{
@@ -92,7 +92,7 @@
 			"period": "2020.10.19 ~ 10.30",
 			"link": {
 				"github": "https://github.com/beginal/13-watchandchill-frontend",
-				"youtube": "https://www.youtube.com/watch?v=1D2MAF9qgvQ&feature=emb_logo"
+				"youtube": "1D2MAF9qgvQ"
 			}
 		}
 	],
