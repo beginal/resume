@@ -16,16 +16,26 @@ interface Props {
 }
 
 const TableItems = ({ title, image, intro, description, details, stack, period, link }: Props) => {
-	const [visiable, setVisable] = useState(false);
+	const [defaultModal, setDefaultModal] = useState(false);
+	const [youtubeModal, setYoutubeModal] = useState(false);
 
-	const handleModal = () => {
-		setVisable((props) => !props);
+	const handleModal = (item?: string) => {
+		if (item === "defaultModal") {
+			setYoutubeModal(false);
+			setDefaultModal(true);
+		} else if (item === "youtubeModal") {
+			setDefaultModal(false);
+			setYoutubeModal(true);
+		} else {
+			setDefaultModal(false);
+			setYoutubeModal(false);
+		}
 	};
 
 	return (
 		<TableItemWrap>
 			<th className="title">
-				<div onClick={handleModal}>
+				<div onClick={() => handleModal("defaultModal")}>
 					{/* <span>{title}</span> */}
 					{image && <img src={image[0]} alt={title} />}
 				</div>
@@ -55,17 +65,16 @@ const TableItems = ({ title, image, intro, description, details, stack, period, 
 					</div>
 				)}
 				{link.youtube && (
-					<div>
-						<a href={link.youtube}>
-							<AiFillYoutube />
-						</a>
+					<div onClick={() => handleModal("youtubeModal")}>
+						<AiFillYoutube />
 					</div>
 				)}
 			</td>
 			<td>
-				{visiable && (
-					<Modal image={image} title={title} details={details} setVisable={setVisable} />
+				{defaultModal && (
+					<Modal image={image} title={title} details={details} setVisable={setDefaultModal} />
 				)}
+				{youtubeModal && <Modal type="youtube" link={link.youtube} setVisable={setYoutubeModal} />}
 			</td>
 		</TableItemWrap>
 	);
@@ -150,6 +159,7 @@ const TableItemWrap = styled.tr`
 	}
 	.etc {
 		div {
+			cursor: pointer;
 			font-size: 30px;
 			&:first-of-type {
 				transition: all 0.3s;

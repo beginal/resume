@@ -36,12 +36,7 @@ export interface FloatingButtonProps {
 	onClick?: () => void;
 }
 
-export const FloatingButton: React.FC<FloatingButtonProps> = ({
-	children,
-	link,
-	onClick,
-	...props
-}) => {
+export const FloatingButton: React.FC<FloatingButtonProps> = ({ children, link, onClick }) => {
 	return (
 		<FloatingButtonWrap>
 			{link ? (

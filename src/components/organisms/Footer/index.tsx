@@ -6,33 +6,10 @@ export interface FooterProps {
 	blog?: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({ github, blog, ...props }) => {
+export const Footer: React.FC<FooterProps> = ({ ...props }) => {
 	const styleProps = {
 		...props,
 	};
-
-	const LinkList = [
-		{
-			title: "GITHUB",
-			link: github,
-		},
-		{
-			title: "BLOG",
-			link: blog,
-		},
-		{
-			title: "empty",
-			link: "",
-		},
-		{
-			title: "empty",
-			link: "",
-		},
-		{
-			title: "empty",
-			link: "",
-		},
-	];
 
 	return (
 		<FooterWrap {...styleProps}>

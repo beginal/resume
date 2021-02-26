@@ -13,6 +13,7 @@ import { RootState } from "redux/store";
 import SkillSet from "components/organisms/Skillset";
 import Footer from "components/organisms/Footer";
 import { SiNotion } from "react-icons/si";
+import IntroCard from "components/organisms/IntroCard";
 
 const resume: React.FC = () => {
 	const dispatch = useDispatch();
@@ -32,8 +33,8 @@ const resume: React.FC = () => {
 				<Title size="X-large" color="white" label="개발자 함준호 입니다" />
 			</Header>
 			<Nav
-				firstMenu={["INDEX", "STORY", "PROJECT"]}
-				lastMenu={["SKILL", "CONTACT", "FGIHU"]}
+				firstMenu={["INDEX", "CONTACT", "PROJECT"]}
+				lastMenu={["SKILL", "X", "FGIHU"]}
 				navTitle="HAM JUN HO"
 			/>
 			<main>
@@ -48,12 +49,13 @@ const resume: React.FC = () => {
 					</span>
 
 					<p style={{ color: "red", fontSize: "0.9rem" }}>
-						2021.02.24 현재 페이지는 아직 미완성 상태입니다. Project각 부분 클릭시 메인이미지
-						Slider, Content탭, Youtube 버튼 클릭시 모달에서 자체실행 등의 기능들을 추가할
-						예정입니다.또한 Mobile, Tablet 반응형은 곧 작업 예정입니다.사이트 우측 하단의 Notion
-						링크를 클릭하여 노션 이력서를 확인해주시면 감사하겠습니다.
+						2021.02.26 - 기능 구현은 거의다 완성되어가고있지만 아직 부족한부분이 많습니다. Mobile,
+						Tablet 페이지는 곧 작업 예정입니다. 완성되기 전까지 우측하단의 Notion 아이콘을 눌러 노션
+						이력서를 확인해주세요!
 					</p>
 				</Description>
+				<IntroCard />
+
 				<TableList
 					title="PROJECT"
 					item={project}
@@ -66,9 +68,6 @@ const resume: React.FC = () => {
 					initialDesc="각 항목에 마우스를 올려보세요."
 					item={skills}
 				/>
-				<Description title="CONTACT">
-					<span>읽어주셔서 감사합니다.</span>
-				</Description>
 			</main>
 			<FloatingButton link="https://www.notion.so/page0blue/Ham-Jun-Ho-73ff9b8c6a9f471392614cc8b8d7a80e">
 				<SiNotion />

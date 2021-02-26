@@ -62,7 +62,7 @@ const NavWrap = styled.nav`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 10px 0;
+		padding: 8px 0;
 		color: #6c757d;
 		font-weight: 500;
 		div {
