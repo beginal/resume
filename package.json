@@ -2,7 +2,7 @@
 	"name": "resume",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://beginal.github.io/resume",
+  "homepage": "https://beginal.github.io/resume",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.5.0",
 		"@testing-library/jest-dom": "^5.11.9",
@@ -25,6 +25,7 @@
 		"slick-carousel": "^1.8.1",
 		"styled-components": "^5.2.1",
 		"styled-reset": "^4.3.4",
+		"styled-tools": "^1.7.2",
 		"typescript": "^4.1.5",
 		"web-vitals": "^1.1.0"
 	},

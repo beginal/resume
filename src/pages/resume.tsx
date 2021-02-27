@@ -33,8 +33,7 @@ const resume: React.FC = () => {
 				<Title size="X-large" color="white" label="개발자 함준호 입니다" />
 			</Header>
 			<Nav
-				firstMenu={["INDEX", "CONTACT", "PROJECT"]}
-				lastMenu={["SKILL", "X", "FGIHU"]}
+				menu={["INDEX", "CONTACT", "PROJECT", "SKILL", "ABCDE", "FGHIU"]}
 				navTitle="HAM JUN HO"
 			/>
 			<main>
@@ -84,6 +83,11 @@ const Wrap = styled.div`
 		flex-direction: column;
 		margin: 0 95px;
 		padding-bottom: 120px;
+	}
+	@media ${({ theme }) => theme.tablet} {
+		main {
+			margin: 0 45px;
+		}
 	}
 `;
 

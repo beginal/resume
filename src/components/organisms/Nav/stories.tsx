@@ -17,5 +17,5 @@ const Template: Story<NavProps> = (args) => <Nav {...args} />;
 export const FirstNav = Template.bind({});
 FirstNav.args = {
 	navTitle: "Ham Jun Ho",
-	firstMenu: ["abc", "ccc", "cdf"],
+	menu: ["abc", "ccc", "cdf"],
 };

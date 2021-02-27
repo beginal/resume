@@ -13,17 +13,6 @@ export const Footer: React.FC<FooterProps> = ({ ...props }) => {
 
 	return (
 		<FooterWrap {...styleProps}>
-			{/* <div>
-				<ul>
-					{LinkList.map(({ title, link }) => (
-						<li key={title}>
-							<a href={link} target="_blank">
-								{title}
-							</a>
-						</li>
-					))}
-				</ul>
-			</div> */}
 			<p className="line"></p>
 			<div> Ⓒ 2021. HAM JUN HO 현재 페이지는 아직 미완성입니다.</div>
 		</FooterWrap>
@@ -37,7 +26,7 @@ const FooterWrap = styled.footer`
 	bottom: 50px;
 	font-size: 0.7rem;
 	background: #eaeae9;
-	margin: 0 200px;
+	width: 100%;
 	div {
 		&:first-of-type {
 			padding: 5px 0;

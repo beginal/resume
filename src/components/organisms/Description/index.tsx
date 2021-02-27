@@ -27,7 +27,7 @@ const DescriptionWrap = styled.div`
 	display: flex;
 	justify-content: center;
 	padding-top: 100px;
-	div {
+	> div {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -47,6 +47,11 @@ const DescriptionWrap = styled.div`
 			font-size: 17px;
 			font-weight: 300;
 			line-height: 1.5;
+		}
+	}
+	@media ${({ theme }) => theme.tablet} {
+		> div {
+			width: 100%;
 		}
 	}
 `;
