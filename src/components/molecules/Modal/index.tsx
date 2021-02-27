@@ -100,7 +100,7 @@ const Background = styled.div<modalStyle>`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: 15;
+	z-index: 30;
 `;
 
 const ModalForm = styled.div<modalStyle>`
@@ -192,4 +192,13 @@ const ModalForm = styled.div<modalStyle>`
 		}
 	}
 	z-index: 20;
+	@media ${({ theme }) => theme.mobileL} {
+		width: 100%;
+		.modalBody {
+			width: 100%;
+		}
+		iframe {
+			width: 100%;
+		}
+	}
 `;

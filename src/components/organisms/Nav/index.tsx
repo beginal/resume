@@ -1,15 +1,32 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { prop, ifProp, theme } from "styled-tools";
+import { withProp, ifProp, theme } from "styled-tools";
+
+type Menu = {
+	icon?: JSX.Element;
+	text: string;
+};
 
 export interface NavProps {
-	navTitle: string;
-	menu: string[];
+	menu: Menu[];
 }
 
-export const Nav: React.FC<NavProps> = ({ navTitle, menu, ...props }) => {
-	const [switchNav, setSwitchNav] = useState(false);
-	const [navLeft, setNavLeft] = useState(-500);
+export const Nav: React.FC<NavProps> = ({ menu, ...props }) => {
+	const [scrollY, setScrollY] = useState(0);
+	const [scrollPer, setScrollPer] = useState(0);
+	const [foldMenu, setFoldMenu] = useState(false);
+
+	const scrollEvent = () => {
+		setScrollY(window.pageYOffset);
+		setScrollPer((window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", scrollEvent);
+		return () => {
+			window.removeEventListener("scroll", scrollEvent);
+		};
+	});
 
 	const moveEvent = (id?: string) => {
 		// 해당 항목으로 스무스한 이동
@@ -20,148 +37,109 @@ export const Nav: React.FC<NavProps> = ({ navTitle, menu, ...props }) => {
 		});
 	};
 
-	const toggleMenu = (bool?: boolean) => {
-		//	tablet 미만 사이즈에서 Nav Toggle
-		if (bool) {
-			setSwitchNav(true);
-		} else {
-			setSwitchNav(false);
-		}
+	const handleFold = () => {
+		setFoldMenu((props) => !props);
 	};
 
 	useEffect(() => {
-		//	tablet 미만 사이즈에서 Nav가 스무스하게 움직이게 하기 위함
-		if (switchNav) {
-			setNavLeft(0);
-		} else {
-			setNavLeft(-500);
-		}
-	}, [switchNav]);
-
-	const menuList = (start: number, end: number) => {
-		return (
-			<div>
-				<ul>
-					{menu.slice(start, end).map((item, i) => (
-						<li key={i} onClick={() => moveEvent(item)}>
-							{item}
-						</li>
-					))}
-				</ul>
-			</div>
-		);
-	};
-
+		console.log(foldMenu);
+	}, [foldMenu]);
 	const styleProps = {
-		switchNav,
-		navTitle,
-		navLeft,
+		scrollY,
+		scrollPer,
+		foldMenu,
 		...props,
 	};
 	return (
 		<NavWrap {...styleProps}>
-			<div className="drawer" onClick={() => toggleMenu(true)}>
-				삼지창
-			</div>
-			<div className="background" onClick={() => toggleMenu(false)}>
-				<div className="navBar">
-					{menuList(0, 3)}
-					<div className="navTitle" onClick={() => moveEvent()}>
-						{navTitle}
-					</div>
-					{menuList(3, 6)}
-				</div>
-			</div>
+			<ul className="navUl">
+				{menu.map((item, i) => (
+					<li key={i} onClick={() => moveEvent(item.text)}>
+						{item.icon}
+						<span>{item.text}</span>
+					</li>
+				))}
+				<li onClick={handleFold}>{"<<"}</li>
+			</ul>
 		</NavWrap>
 	);
 };
 
 type navType = {
-	switchNav: boolean;
-	navLeft: number;
+	scrollY: number;
+	scrollPer: number;
+	foldMenu: boolean;
 };
 // style 영역
 const NavWrap = styled.nav<navType>`
-	position: sticky;
-	top: 0;
-	background: rgba(184, 184, 184, 0.8);
-	padding: 8px 30px;
-	z-index: 10;
-	.drawer {
-		display: none;
-	}
-	.navBar {
+	position: fixed;
+	transition: top 0.7s, left 0.7s;
+	top: ${ifProp("foldMenu", "260px", "190px")};
+	left: ${ifProp("foldMenu", "3px", "20px")};
+	z-index: 20;
+	cursor: pointer;
+	ul {
 		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 8px 0;
-		color: #6c757d;
-		font-weight: 500;
-		div {
-			display: flex;
-			min-width: 250px;
-			&:first-of-type {
-				justify-content: flex-end;
-			}
+		font-size: 2rem;
+		opacity: 0.8;
+		transition: all 0.3s;
+		&:hover {
+			opacity: 1;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -10%;
+			width: 6px;
+			height: ${withProp("scrollPer", (scrollPer) => scrollPer)}%;
+			z-index: 5;
+			background: #fd888c;
+		}
+		li {
+			background: #fd555c;
+			position: relative;
+			transition: padding 0.7s;
+			padding: ${ifProp("foldMenu", "2px", "12px")};
+			width: 100%;
+			height: 100%;
 			&:last-of-type {
-				justify-content: flex-start;
-			}
-			ul {
 				display: flex;
-				li {
-					padding: 8px 10px;
-					font-size: 0.9rem;
-					cursor: pointer;
-					&:hover {
-						color: #343a40;
-					}
+				justify-content: center;
+				font-size: 1.2rem;
+				padding: 5;
+				background: white;
+			}
+			span {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				transition: width 0.4s;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* visibility: hidden; */
+				border-radius: 1px;
+				width: 5px;
+				font-size: 0;
+				font-weight: 500;
+				padding: 3px;
+				height: inherit;
+				background: white;
+			}
+			&:hover {
+				background: white;
+				span {
+					/* visibility: visible; */
+					left: 100%;
+					width: 140px;
+					font-size: 1.1rem;
 				}
 			}
-		}
-		.navTitle {
-			padding: 0 20px;
-			min-width: auto;
-			font-size: 1.5rem;
-			font-weight: 600;
-			color: #000000;
-			cursor: pointer;
 		}
 	}
 	@media ${({ theme }) => theme.tablet} {
-		.drawer {
-			display: block;
-			cursor: pointer;
-		}
-		.background {
-			${theme("modalBackground")};
-			transition: visibility 0.5s;
-			visibility: ${ifProp("switchNav", "visibility", "hidden")};
-			.navBar {
-				flex-direction: column;
-				align-items: flex-end;
-				position: fixed;
-				top: 0;
-				left: ${prop("navLeft")}px;
-				bottom: 0;
-				transition: left 0.5s;
-				box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.3);
-				width: 200px;
-				background: white;
-				.navTitle {
-					display: none;
-				}
-				> div {
-					min-width: auto;
-					ul {
-						flex-direction: column;
-						li {
-							text-align: right;
-							font-size: 1.3rem;
-						}
-					}
-				}
-			}
-		}
+	}
+	@media ${({ theme }) => theme.mobileL} {
 	}
 `;

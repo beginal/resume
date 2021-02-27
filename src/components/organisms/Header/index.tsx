@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ children, ...props }) => {
 		...props,
 	};
 	return (
-		<HeaderWrap {...styleProps}>
+		<HeaderWrap id="TOP" {...styleProps}>
 			<div className="container">{children}</div>
 		</HeaderWrap>
 	);
@@ -24,5 +24,8 @@ const HeaderWrap = styled.header`
 		padding: 16rem 4rem;
 		background: url("./img/header.png") no-repeat center center/cover;
 		opacity: 0.8;
+		> * {
+			margin: 0 95px;
+		}
 	}
 `;

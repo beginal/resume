@@ -85,15 +85,13 @@ export default TableItems;
 const TableItemWrap = styled.tr`
 	border-bottom: 1px solid gray;
 	height: 100%;
-	th {
-		padding: 20px 0;
-	}
 	> .title,
 	.etc {
 		vertical-align: middle;
 		text-align: center;
 	}
 	> .title {
+		padding: 20px 0;
 		margin: 0 auto;
 		div {
 			cursor: pointer;
@@ -171,6 +169,19 @@ const TableItemWrap = styled.tr`
 				transition: all 0.3s;
 				&:hover {
 					color: red;
+				}
+			}
+		}
+	}
+	@media ${({ theme }) => theme.mobileL} {
+		.title {
+			padding: 0;
+			div {
+				width: 50px;
+				width: 50px;
+				img {
+					width: inherit;
+					height: inherit;
 				}
 			}
 		}

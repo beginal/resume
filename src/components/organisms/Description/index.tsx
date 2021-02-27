@@ -44,7 +44,7 @@ const DescriptionWrap = styled.div`
 		div {
 			margin-top: 20px;
 			text-align: center;
-			font-size: 17px;
+			font-size: 1.1.rem;
 			font-weight: 300;
 			line-height: 1.5;
 		}
@@ -52,6 +52,13 @@ const DescriptionWrap = styled.div`
 	@media ${({ theme }) => theme.tablet} {
 		> div {
 			width: 100%;
+		}
+	}
+	@media ${({ theme }) => theme.mobileL} {
+		> div {
+			> div {
+				font-size: 0.9rem;
+			}
 		}
 	}
 `;

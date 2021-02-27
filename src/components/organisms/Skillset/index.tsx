@@ -59,11 +59,11 @@ const SkillSetWrap = styled.div<SkillSetType>`
 	flex-direction: column;
 	align-items: center;
 	background: #ededed;
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 	.skillDesc {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 		background: ${({ descOver }) => (descOver ? "#ffffff" : "#ededed")};
 		color: #7c7a7a;
 		border-radius: 4px;
@@ -87,22 +87,23 @@ const SkillSetWrap = styled.div<SkillSetType>`
 			align-items: center;
 			justify-content: center;
 			text-align: center;
-			background: #ededed;
-			border-radius: 0 0 4px 4px;
+			background: #ffffff;
+			cursor: text;
 			margin-top: 0;
+			border-radius: 10%;
 			font-size: 0.7rem;
-			flex-grow: 1;
-			height: 60px;
-			padding: 10px;
+			width: 100px;
+			height: 100px;
+			margin: 10px;
 			img {
-				/* width: 100%; */
-				height: 100%;
+				border-radius: 10%;
+				width: inherit;
+				height: inherit;
 			}
 			span {
 				padding: 15px;
 			}
 			&:hover {
-				background: #ffffff;
 			}
 		}
 	}

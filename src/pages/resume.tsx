@@ -13,6 +13,8 @@ import { RootState } from "redux/store";
 import SkillSet from "components/organisms/Skillset";
 import Footer from "components/organisms/Footer";
 import { SiNotion } from "react-icons/si";
+import { AiOutlineHome, AiOutlineProject } from "react-icons/ai";
+import { BsBookHalf } from "react-icons/bs";
 import IntroCard from "components/organisms/IntroCard";
 
 const resume: React.FC = () => {
@@ -27,15 +29,35 @@ const resume: React.FC = () => {
 	}, []);
 
 	const { project, skills } = useSelector((state: RootState) => state.resumeReducer);
+
+	const navList = [
+		{
+			icon: <AiOutlineHome />,
+			text: "TOP",
+		},
+		{
+			icon: <AiOutlineHome />,
+			text: "INDEX",
+		},
+		{
+			icon: <AiOutlineHome />,
+			text: "CONTACT",
+		},
+		{
+			icon: <AiOutlineProject />,
+			text: "PROJECT",
+		},
+		{
+			icon: <BsBookHalf />,
+			text: "SKILL",
+		},
+	];
 	return (
 		<Wrap>
 			<Header>
 				<Title size="X-large" color="white" label="개발자 함준호 입니다" />
 			</Header>
-			<Nav
-				menu={["INDEX", "CONTACT", "PROJECT", "SKILL", "ABCDE", "FGHIU"]}
-				navTitle="HAM JUN HO"
-			/>
+			<Nav menu={navList} />
 			<main>
 				<Description title="INDEX">
 					<span>
@@ -48,9 +70,8 @@ const resume: React.FC = () => {
 					</span>
 
 					<p style={{ color: "red", fontSize: "0.9rem" }}>
-						2021.02.26 - 기능 구현은 거의다 완성되어가고있지만 아직 부족한부분이 많습니다. Mobile,
-						Tablet 페이지는 곧 작업 예정입니다. 완성되기 전까지 우측하단의 Notion 아이콘을 눌러 노션
-						이력서를 확인해주세요!
+						2021.02.28 - 현재 80%정도 완성되었습니다. 완성되기 전까지 우측하단의 Notion 아이콘을
+						눌러 노션 이력서를 확인해주세요!
 					</p>
 				</Description>
 				<IntroCard />
