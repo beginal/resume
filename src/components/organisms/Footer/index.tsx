@@ -14,7 +14,12 @@ export const Footer: React.FC<FooterProps> = ({ ...props }) => {
 	return (
 		<FooterWrap {...styleProps}>
 			<p className="line"></p>
-			<div> Ⓒ 2021. HAM JUN HO 현재 페이지는 아직 미완성입니다.</div>
+			<div>
+				<span>Ⓒ 2021. HAM JUN HO 현재 페이지는 아직 미완성입니다.</span>
+				<span>
+					React, TypeScript, Styled-Component, Axios, Storybooks 등을 사용해 제작했습니다.
+				</span>
+			</div>
 		</FooterWrap>
 	);
 };
@@ -23,40 +28,26 @@ export default Footer;
 // style 영역
 const FooterWrap = styled.footer`
 	position: relative;
-	bottom: 50px;
 	font-size: 0.7rem;
 	background: #eaeae9;
 	width: 100%;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: column;
 	div {
-		&:first-of-type {
-			padding: 5px 0;
-			font-weight: 400;
-			ul {
-				display: flex;
-				justify-content: space-around;
-				li {
-					padding: 8px;
-					&:hover {
-						cursor: pointer;
-						color: #9321fd;
-						font-weight: 400;
-					}
-				}
-			}
-		}
-		&:last-of-type {
-			font-size: 0.7rem;
-			color: #7475aa;
-			padding: 5px 0;
-			display: flex;
-			font-weight: 400;
-			justify-content: center;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: #7475aa;
+		font-size: 0.7rem;
+		line-height: 1.3;
+		padding-top: 20px;
+		font-weight: 400;
 	}
 	p.line {
 		width: 100%;
 		height: 1.5px;
 		background: #d8d8d7;
-		margin: 13px 0;
 	}
 `;

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { theme } from "styled-tools";
 import { Title } from "components/atoms/Title";
 import Description from "components/organisms/Description";
 import Header from "components/organisms/Header";
@@ -15,6 +16,7 @@ import Footer from "components/organisms/Footer";
 import { SiNotion } from "react-icons/si";
 import { AiOutlineHome, AiOutlineProject } from "react-icons/ai";
 import { BsBookHalf } from "react-icons/bs";
+import { FiChevronUp, FiClipboard } from "react-icons/fi";
 import IntroCard from "components/organisms/IntroCard";
 
 const resume: React.FC = () => {
@@ -32,7 +34,7 @@ const resume: React.FC = () => {
 
 	const navList = [
 		{
-			icon: <AiOutlineHome />,
+			icon: <FiChevronUp />,
 			text: "TOP",
 		},
 		{
@@ -40,7 +42,7 @@ const resume: React.FC = () => {
 			text: "INDEX",
 		},
 		{
-			icon: <AiOutlineHome />,
+			icon: <FiClipboard />,
 			text: "CONTACT",
 		},
 		{
@@ -98,7 +100,8 @@ const resume: React.FC = () => {
 };
 
 const Wrap = styled.div`
-	background: #eaeae9;
+	background: ${theme("color.main")};
+	color: ${theme("color.font")};
 	main {
 		display: flex;
 		flex-direction: column;

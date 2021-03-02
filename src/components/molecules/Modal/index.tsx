@@ -177,7 +177,6 @@ const ModalForm = styled.div<modalStyle>`
 		margin-top: 10px;
 		overflow: scroll;
 		height: 260px;
-		color: #333333;
 		ul {
 			padding: 10px;
 			box-sizing: border-box;

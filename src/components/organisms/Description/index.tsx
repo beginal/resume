@@ -33,7 +33,6 @@ const DescriptionWrap = styled.div`
 		align-items: center;
 		justify-content: center;
 		width: 80%;
-		color: #3f4165;
 		h2 {
 			font-family: "Noto Sans KR", sans-serif;
 			text-transform: uppercase;

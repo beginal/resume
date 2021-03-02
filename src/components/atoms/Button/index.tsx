@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { theme } from "styled-tools";
 
 export interface ButtonProps {
 	primary?: boolean;
@@ -7,6 +8,7 @@ export interface ButtonProps {
 	backgroundColor?: string;
 	size?: "small" | "medium" | "large";
 	label: string;
+	link?: string;
 	onClick?: () => void;
 }
 
@@ -16,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
 	backgroundColor,
 	disabled,
 	label,
+	link,
 	...props
 }) => {
 	const styleProps = {
@@ -25,7 +28,13 @@ export const Button: React.FC<ButtonProps> = ({
 	};
 	return (
 		<ButtonWrap disabled={disabled} type="button" style={{ backgroundColor }} {...styleProps}>
-			{label}
+			{link ? (
+				<a href={link} target="_blank">
+					{label}
+				</a>
+			) : (
+				<>{label}</>
+			)}
 		</ButtonWrap>
 	);
 };
@@ -60,20 +69,19 @@ const ButtonWrap = styled.button<ButtonType>`
 	font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	border: 0;
-	border-radius: 3em;
+	border-radius: 5px;
 	cursor: pointer;
-	display: inline-block;
-	line-height: 1;
+	display: flex;
+	outline: none;
+	justify-content: center;
+	align-items: center;
+	transition: background 0.5s;
+	background: ${theme("color.sub1")};
 	${({ primary }) =>
-		primary
-			? css`
+		primary &&
+		`
 					color: white;
 					background-color: #1ea7fd;
-			  `
-			: css`
-					color: #333;
-					background-color: transparent;
-					box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 			  `};
 	${({ size }) => {
 		switch (size) {
@@ -85,6 +93,9 @@ const ButtonWrap = styled.button<ButtonType>`
 				return `font-size: 16px; padding: 12px 24px;`;
 		}
 	}};
+	&:hover {
+		background: ${theme("color.sub2")};
+	}
 `;
 
 const FloatingButtonWrap = styled.button`

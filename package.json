@@ -2,7 +2,6 @@
 	"name": "resume",
 	"version": "0.1.0",
 	"private": true,
-  "homepage": "https://beginal.github.io/resume",
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.5.0",
 		"@testing-library/jest-dom": "^5.11.9",
@@ -13,6 +12,7 @@
 		"@types/react": "^17.0.2",
 		"@types/react-dom": "^17.0.1",
 		"axios": "^0.21.1",
+		"lodash": "^4.17.21",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-helmet": "^6.1.0",
@@ -39,6 +39,7 @@
 		"@storybook/node-logger": "^6.1.18",
 		"@storybook/preset-create-react-app": "^3.1.6",
 		"@storybook/react": "^6.1.18",
+		"@types/lodash": "^4.14.168",
 		"@types/react-helmet": "^6.1.0",
 		"@types/react-redux": "^7.1.16",
 		"@types/react-router-dom": "^5.1.7",

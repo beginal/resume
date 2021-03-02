@@ -1,6 +1,9 @@
 const color = {
-	white: "#ffffff",
-	black: "#000000",
+	main: "#f2f2f2",
+	sub1: "#d9d9d9",
+	sub2: "#595959",
+	sub3: "#868686",
+	font: "#262626",
 };
 
 const sizes = {

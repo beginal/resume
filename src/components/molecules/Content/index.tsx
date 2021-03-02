@@ -33,7 +33,6 @@ const ContentWrap = styled.div<styleType>`
 	padding-top: 100px;
 	justify-content: center;
 	width: 60%;
-	color: #3f4165;
 	margin-bottom: 20px;
 	h2 {
 		font-family: "Noto Sans KR", sans-serif;

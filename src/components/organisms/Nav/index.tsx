@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { withProp, ifProp, theme } from "styled-tools";
+import { theme } from "styled-tools";
+import { withProp, ifProp } from "styled-tools";
+import useScroll, { moveEvent } from "hooks/useScroll";
 
 type Menu = {
 	icon?: JSX.Element;
@@ -12,38 +14,13 @@ export interface NavProps {
 }
 
 export const Nav: React.FC<NavProps> = ({ menu, ...props }) => {
-	const [scrollY, setScrollY] = useState(0);
-	const [scrollPer, setScrollPer] = useState(0);
+	const { scrollY, scrollPer } = useScroll(0);
 	const [foldMenu, setFoldMenu] = useState(false);
-
-	const scrollEvent = () => {
-		setScrollY(window.pageYOffset);
-		setScrollPer((window.pageYOffset / (document.body.scrollHeight - window.innerHeight)) * 100);
-	};
-
-	useEffect(() => {
-		window.addEventListener("scroll", scrollEvent);
-		return () => {
-			window.removeEventListener("scroll", scrollEvent);
-		};
-	});
-
-	const moveEvent = (id?: string) => {
-		// 해당 항목으로 스무스한 이동
-		window.scrollTo({
-			top: id ? document.getElementById(id)?.offsetTop : 0,
-			left: 0,
-			behavior: "smooth",
-		});
-	};
 
 	const handleFold = () => {
 		setFoldMenu((props) => !props);
 	};
 
-	useEffect(() => {
-		console.log(foldMenu);
-	}, [foldMenu]);
 	const styleProps = {
 		scrollY,
 		scrollPer,
@@ -59,7 +36,7 @@ export const Nav: React.FC<NavProps> = ({ menu, ...props }) => {
 						<span>{item.text}</span>
 					</li>
 				))}
-				<li onClick={handleFold}>{"<<"}</li>
+				<li onClick={handleFold}>{foldMenu ? " >>" : "<<"}</li>
 			</ul>
 		</NavWrap>
 	);
@@ -75,7 +52,7 @@ const NavWrap = styled.nav<navType>`
 	position: fixed;
 	transition: top 0.7s, left 0.7s;
 	top: ${ifProp("foldMenu", "260px", "190px")};
-	left: ${ifProp("foldMenu", "3px", "20px")};
+	left: ${ifProp("foldMenu", "0px", "20px")};
 	z-index: 20;
 	cursor: pointer;
 	ul {
@@ -94,10 +71,10 @@ const NavWrap = styled.nav<navType>`
 			width: 6px;
 			height: ${withProp("scrollPer", (scrollPer) => scrollPer)}%;
 			z-index: 5;
-			background: #fd888c;
+			background: ${theme("color.font")};
 		}
 		li {
-			background: #fd555c;
+			background: ${theme("color.sub2")};
 			position: relative;
 			transition: padding 0.7s;
 			padding: ${ifProp("foldMenu", "2px", "12px")};
@@ -118,7 +95,7 @@ const NavWrap = styled.nav<navType>`
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				/* visibility: hidden; */
+				visibility: hidden;
 				border-radius: 1px;
 				width: 5px;
 				font-size: 0;
@@ -130,7 +107,7 @@ const NavWrap = styled.nav<navType>`
 			&:hover {
 				background: white;
 				span {
-					/* visibility: visible; */
+					visibility: visible;
 					left: 100%;
 					width: 140px;
 					font-size: 1.1rem;
