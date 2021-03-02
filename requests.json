@@ -2,23 +2,18 @@
 	"project": [
 		{
 			"title": "Resume & ProtFolio",
-			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
-			"intro": "이력서 포트폴리오 겸용 페이지입니다..",
+			"image": ["./img/resume_1.png", "./img/resume_2.png", "./img/resume_3.png"],
+			"intro": "이력서 & 포트폴리오 페이지",
 			"description": ["개인 포트폴리오 페이지를 제작중입니다.", ""],
 			"details": [
-				"모바일, 태블릿 페이지 구현 예정",
-				"Atomic Design 패턴 + Storybook을 사용",
-				"현재 기능 구현에 집중하는중, 리팩토링이 되지 않아 코드 가독성이 많이 떨어짐",
-				"현재 미완성입니다.",
-				"Modal 안에 Slick 넣을예정",
-				"Header에 Slick 적용할지 고민중",
-				"이미지가 없을경우 대체 이미지 다시 고르기",
-				"CONTACT 부분 만들기 (개인정보)",
-				"티스토리, 깃허브, 최상단으로, 만들어서 fixed로 띄우기",
-				"Skill부분 뭔가 어색한데.."
+				"미숙한 실력이지만 익숙해지기 위해 Typescirpt와 Storybooks을 적용",
+				"Atomic Design 패턴 형식으로 코드 구현",
+				"Custom Hooks을 작성하여 코드 품질을 높이려는 시도",
+				"lodash throttle를 사용해 성능 최적화 시도",
+				"계속해서 기능구현 / 리팩토링 중입니다."
 			],
 			"stack": ["React", "Typescript", "Styled Components", "Storybook", "Redux", "Axios"],
-			"period": "2021.02.21 ~ 진행중",
+			"period": "2021.02.21 ~ 2021.03.02(임시완성)",
 			"link": {
 				"github": "https://github.com/beginal/resume"
 			}
@@ -26,7 +21,7 @@
 		{
 			"title": "Rencar Mobile App",
 			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
-			"intro": "Rencar 사고대차 서비스 모바일버전입니다.",
+			"intro": "Rencar 사고대차 서비스 모바일버전.",
 			"description": ["4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.", ""],
 			"details": [
 				"Login, Main, Mypage, 요청차량 정보 페이지 구현",
