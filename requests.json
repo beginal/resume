@@ -100,47 +100,52 @@
 		{
 			"title": "JavaScript",
 			"logo": "./img/skills/js.png",
-			"description": "Javascript의 중요한 개념들(this, 비동기 등)을 이해하고 있습니다. ES5와 ES6 이후의 차이점에 대해 이해하며, 자바스크립트의 최신문법을 사용하는것을 좋아합니다."
+			"description": " ES6 기본 문법 숙지, 자바스크립트의 중요개념(this 비동기 등)이해"
+		},
+		{
+			"title": "TypeScript",
+			"logo": "./img/skills/ts.png",
+			"description": "타입 선언, 간단한 활용 가능"
 		},
 		{
 			"title": "React",
 			"logo": "./img/skills/react.png",
-			"description": "React를 자유자재로 사용하여 혼자서 프로젝트를 진행할 수 있습니다. TodoList, 여러번의 클론코딩, 토이프로젝트 경험이 있습니다. React LifeCycle을 이해하고 있으며 적재적소에 사용 할 수 있습니다.useState, useEffect 등 여러가지 Hooks를 자유롭게 사용할 줄 알며 Custom Hooks을 만들수 있습니다."
+			"description": "여러번의 프로젝트 진행, LifeCycle의 이해, Hooks를 주로 사용함, 자유자재로 사용가능"
 		},
 		{
 			"title": "Next.js",
 			"logo": "./img/skills/nextjs.png",
-			"description": "Next.js의 getServerSideProps를 사용해 SSR을 구현할 수 있습니다."
+			"description": "Next.js의 getServerSideProps를 사용해 SSR을 구현한 경험이 있음"
 		},
 		{
 			"title": "Redux",
 			"logo": "./img/skills/redux.png",
-			"description": "Redux로 State를 관리하는데 익숙합니다. Redux-ToolKit을 주로 사용합니다.Redux를 사용해 CRUD를 구현할 수 있습니다."
+			"description": "Redux를 활용한 State 관리 경험 다수"
 		},
 		{
 			"title": "styled-components",
 			"logo": "./img/skills/styled.png",
-			"description": "Styled-Components의 Props를 사용하여 동적인 스타일링을 적용할 수 있습니다.Theme을 사용하는것을 좋아합니다."
+			"description": "css in js 방식중 제일 즐겨쓰는 방식, styled-tools와 함께 사용함"
 		},
 		{
 			"title": "SASS",
 			"logo": "./img/skills/sass.png",
-			"description": "변수를 사용하여 유지보수성을 높일수 있습니다. mixin extend 등의 함수를 활용할 수 있습니다."
+			"description": "mixin extend 등 활용가능"
 		},
 		{
 			"title": "Python",
 			"logo": "./img/skills/python.png",
-			"description": "Python을 활용하여 간단한 크롤링, 자동화를 제작해본 경험이 있습니다."
+			"description": "간단한 크롤링, 게임 매크로 제작 경험"
 		},
 		{
 			"title": "AutoHotkey",
 			"logo": "./img/skills/ahk.png",
-			"description": "지금도 오토핫키를 이용한 자동화 프로그램을 직접 만들어서 사용중입니다."
+			"description": "React 다음으로 가장 많이쓰는 프로그래밍 언어, 쉽게 매크로를 짤수 있음"
 		},
 		{
 			"title": "Git",
 			"logo": "./img/skills/git.png",
-			"description": "Git을 활용해 Branch를 나눠 협업을 진행해본 경험이 있습니다."
+			"description": "Git을 활용한 협업 경험 다수."
 		}
 	]
 }
