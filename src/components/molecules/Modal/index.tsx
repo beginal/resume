@@ -193,8 +193,21 @@ const ModalForm = styled.div<modalStyle>`
 	z-index: 20;
 	@media ${({ theme }) => theme.mobileL} {
 		width: 100%;
+		height: 100%;
+
 		.modalBody {
 			width: 100%;
+			padding-bottom: 100px;
+			.imageList {
+				width: 100%;
+				height: auto;
+				img {
+					height: auto;
+				}
+			}
+			.details {
+				height: 300px;
+			}
 		}
 		iframe {
 			width: 100%;

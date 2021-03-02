@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { theme } from "styled-tools";
 import { withProp, ifProp } from "styled-tools";
@@ -52,13 +52,13 @@ const NavWrap = styled.nav<navType>`
 	position: fixed;
 	transition: top 0.7s, left 0.7s;
 	top: ${ifProp("foldMenu", "260px", "190px")};
-	left: ${ifProp("foldMenu", "0px", "20px")};
+	left: ${ifProp("foldMenu", "0px", "10px")};
 	z-index: 20;
 	cursor: pointer;
 	ul {
 		position: relative;
 		font-size: 2rem;
-		opacity: 0.8;
+		opacity: 0.5;
 		transition: all 0.3s;
 		&:hover {
 			opacity: 1;

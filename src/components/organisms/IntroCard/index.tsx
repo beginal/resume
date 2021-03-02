@@ -77,4 +77,15 @@ const Wrap = styled.div`
 			}
 		}
 	}
+	@media ${({ theme }) => theme.mobileL} {
+		div {
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			&:first-of-type {
+				width: fit-content;
+			}
+		}
+	}
 `;

@@ -56,9 +56,7 @@ const resume: React.FC = () => {
 	];
 	return (
 		<Wrap>
-			<Header>
-				<Title size="X-large" color="white" label="개발자 함준호 입니다" />
-			</Header>
+			<Header>ㅇㄴ</Header>
 			<Nav menu={navList} />
 			<main>
 				<Description title="INDEX">
@@ -72,8 +70,8 @@ const resume: React.FC = () => {
 					</span>
 
 					<p style={{ color: "red", fontSize: "0.9rem" }}>
-						2021.02.28 - 현재 80%정도 완성되었습니다. 완성되기 전까지 우측하단의 Notion 아이콘을
-						눌러 노션 이력서를 확인해주세요!
+						2021.03.02 - 거의 완성되어갑니다! 아직 부족한 부분이 있을수 있기에 노션 이력서도 확인
+						부탁드려요! 오른쪽 아래 아이콘을 통해 이동하실수 있습니다.
 					</p>
 				</Description>
 				<IntroCard />
@@ -84,12 +82,7 @@ const resume: React.FC = () => {
 					desc="프로젝트에 대한 설명설명"
 					tailText="이미지를 클릭하시면 각 프로젝트에 대한 자세한 설명을 확인하실수 있습니다."
 				/>
-				<SkillSet
-					title="SKILL"
-					desc="Skillset"
-					initialDesc="각 항목에 마우스를 올려보세요."
-					item={skills}
-				/>
+				<SkillSet title="SKILL" desc="Skillset" item={skills} />
 			</main>
 			<FloatingButton link="https://www.notion.so/page0blue/Ham-Jun-Ho-73ff9b8c6a9f471392614cc8b8d7a80e">
 				<SiNotion />
@@ -108,9 +101,11 @@ const Wrap = styled.div`
 		margin: 0 95px;
 		padding-bottom: 120px;
 	}
-	@media ${({ theme }) => theme.tablet} {
+	@media ${({ theme }) => theme.mobileL} {
+		height: 100%;
 		main {
-			margin: 0 45px;
+			margin: 0 10px;
+			padding-bottom: 0px;
 		}
 	}
 `;

@@ -50,4 +50,9 @@ const FooterWrap = styled.footer`
 		height: 1.5px;
 		background: #d8d8d7;
 	}
+	@media ${({ theme }) => theme.mobileL} {
+		div {
+			padding: 20px 25px;
+		}
+	}
 `;
