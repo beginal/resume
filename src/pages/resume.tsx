@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { theme } from "styled-tools";
 import { Title } from "components/atoms/Title";
 import Description from "components/organisms/Description";
@@ -8,7 +8,7 @@ import { FloatingButton } from "components/atoms/Button";
 import TableList from "components/organisms/TableList";
 import styled from "styled-components";
 import axios from "axios";
-import { getProjectList, getSkillsList } from "redux/reducer/resumeReducer";
+import { getPostsList, getProjectList, getSkillsList } from "redux/reducer/resumeReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/store";
 import SkillSet from "components/organisms/Skillset";
@@ -18,6 +18,7 @@ import { AiOutlineHome, AiOutlineProject } from "react-icons/ai";
 import { BsBookHalf } from "react-icons/bs";
 import { FiChevronUp, FiClipboard } from "react-icons/fi";
 import IntroCard from "components/organisms/IntroCard";
+import PostList from "components/organisms/PostList";
 
 const resume: React.FC = () => {
 	const dispatch = useDispatch();
@@ -30,7 +31,14 @@ const resume: React.FC = () => {
 		})();
 	}, []);
 
-	const { project, skills } = useSelector((state: RootState) => state.resumeReducer);
+	useEffect(() => {
+		(async function () {
+			const res = await axios.get("https://tistoryblogcrawling.herokuapp.com/");
+			dispatch(getPostsList(res.data));
+		})();
+	}, []);
+
+	const { project, skills, posts } = useSelector((state: RootState) => state.resumeReducer);
 
 	const navList = [
 		{
@@ -68,11 +76,6 @@ const resume: React.FC = () => {
 						자동화 하는 일을 좋아합니다. 자주 쓰는 조합키나 PC 사용 패턴 등을 단축키로 등록해두고
 						편하게 사용합니다. 팀으로서 움직이는 개발자인 만큼 협업을 중요하게 생각합니다.
 					</span>
-
-					<p style={{ color: "red", fontSize: "0.9rem" }}>
-						2021.03.02 - 거의 완성되어갑니다! 아직 부족한 부분이 있을수 있기에 노션 이력서도 확인
-						부탁드려요! 오른쪽 아래 아이콘을 통해 이동하실수 있습니다.
-					</p>
 				</Description>
 				<IntroCard />
 
@@ -83,6 +86,7 @@ const resume: React.FC = () => {
 					tailText="이미지를 클릭하시면 각 프로젝트에 대한 자세한 설명을 확인하실수 있습니다."
 				/>
 				<SkillSet title="SKILL" desc="Skillset" item={skills} />
+				<PostList posts={posts} title="POST" desc="블로그 포스팅 목록입니다." />
 			</main>
 			<FloatingButton link="https://www.notion.so/page0blue/Ham-Jun-Ho-73ff9b8c6a9f471392614cc8b8d7a80e">
 				<SiNotion />

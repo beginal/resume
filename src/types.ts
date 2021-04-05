@@ -17,3 +17,10 @@ export interface skillsType {
 	logo: string;
 	description: string;
 }
+
+export interface postsType {
+	date: string;
+	link: string;
+	title: string;
+	new: boolean;
+}
