@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Content from "components/molecules/Content";
-import TableItems from "components/molecules/TableItem";
+import Content from "components/backup/molecules/Content";
+import TableItems from "components/backup/molecules/TableItem";
 import { projectType } from "types";
-import Label from "components/atoms/Label";
+import Label from "components/backup/atoms/Label";
 
 export interface TableListProps {
 	title: string;

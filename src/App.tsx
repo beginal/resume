@@ -1,5 +1,6 @@
 import React from "react";
-import Resume from "pages/resume";
+// import Resume from "pages/resume";
+import NewResume from "pages/newResume";
 import { Helmet } from "react-helmet";
 
 const App: React.FC = () => {
@@ -12,7 +13,8 @@ const App: React.FC = () => {
 					rel="stylesheet"
 				/>
 			</Helmet>
-			<Resume />
+			{/* <Resume /> */}
+			<NewResume />
 		</div>
 	);
 };

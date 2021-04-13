@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiFillYoutube, AiOutlineGithub } from "react-icons/ai";
-import Label from "components/atoms/Label";
+import Label from "components/backup/atoms/Label";
 import styled from "styled-components";
 import Modal from "../Modal";
 

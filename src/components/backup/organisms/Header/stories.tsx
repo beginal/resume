@@ -3,7 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 import Header, { HeaderProps } from ".";
-import { Title } from "components/atoms/Title";
+import { Title } from "components/backup/atoms/Title";
 
 export default {
 	title: "organisms/Header",

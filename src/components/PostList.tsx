@@ -1,4 +1,4 @@
-import Content from "components/molecules/Content";
+import Content from "components/backup/molecules/Content";
 import React from "react";
 import styled from "styled-components";
 import { postsType } from "types";
@@ -15,8 +15,8 @@ const PostList = ({ posts, title, desc }: Props) => {
 			<Content title={title} desc={desc} />
 			<div className="postList">
 				{posts[0] &&
-					posts.map(({ title, link, date, new: newPost }) => (
-						<div>
+					posts.map(({ title, link, date, new: newPost }, i) => (
+						<div key={i}>
 							<a href={link} target="_blank">
 								<span key={title + link}>{title}</span>
 							</a>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Content from "components/molecules/Content";
+import Content from "components/backup/molecules/Content";
 import { skillsType } from "types";
 
 export interface SkillSetProps {

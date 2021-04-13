@@ -1,5 +1,5 @@
-import { Button } from "components/atoms/Button";
-import Content from "components/molecules/Content";
+import { Button } from "components/backup/atoms/Button";
+import Content from "components/backup/molecules/Content";
 import React from "react";
 import styled from "styled-components";
 

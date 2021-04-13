@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { theme } from "styled-tools";
-import { Title } from "components/atoms/Title";
-import Description from "components/organisms/Description";
-import Header from "components/organisms/Header";
-import { Nav } from "components/organisms/Nav";
-import { FloatingButton } from "components/atoms/Button";
-import TableList from "components/organisms/TableList";
+import { Title } from "components/backup/atoms/Title";
+import Description from "components/backup/organisms/Description";
+import Header from "components/backup/organisms/Header";
+import { Nav } from "components/backup/organisms/Nav";
+import { FloatingButton } from "components/backup/atoms/Button";
+import TableList from "components/backup/organisms/TableList";
 import styled from "styled-components";
 import axios from "axios";
 import { getPostsList, getProjectList, getSkillsList } from "redux/reducer/resumeReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "redux/store";
-import SkillSet from "components/organisms/Skillset";
-import Footer from "components/organisms/Footer";
+import SkillSet from "components/backup/organisms/Skillset";
+import Footer from "components/backup/organisms/Footer";
 import { SiNotion } from "react-icons/si";
 import { AiOutlineHome, AiOutlineProject } from "react-icons/ai";
 import { BsBookHalf } from "react-icons/bs";
 import { FiChevronUp, FiClipboard } from "react-icons/fi";
-import IntroCard from "components/organisms/IntroCard";
-import PostList from "components/organisms/PostList";
+import IntroCard from "components/backup/organisms/IntroCard";
+import PostList from "components/backup/organisms/PostList";
 
 const resume: React.FC = () => {
 	const dispatch = useDispatch();
