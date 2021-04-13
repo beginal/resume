@@ -12,15 +12,15 @@
 				"lodash throttle를 사용해 성능 최적화 시도",
 				"계속해서 기능구현 / 리팩토링 중입니다."
 			],
-			"stack": ["React", "Typescript", "Styled Components", "Storybook", "Redux", "Axios"],
-			"period": "2021.02.21 ~ 2021.03.02(임시완성)",
+			"stack": ["React", "Typescript", "Styled", "Storybook", "Redux", "Axios"],
+			"period": "2021.02.21 ~ 2021.04.14 (계속 수정/보완중)",
 			"link": {
 				"github": "https://github.com/beginal/resume"
 			}
 		},
 		{
 			"title": "Rencar Mobile App",
-			"image": ["https://taegon.kim/wp-content/uploads/2018/05/image-5.png"],
+			"image": ["https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png"],
 			"intro": "Rencar 사고대차 서비스 모바일버전.",
 			"description": ["4명의 FE와 2명의 BE가 함께 협업하여 제작했습니다.", ""],
 			"details": [
@@ -46,8 +46,7 @@
 			],
 			"intro": "Class101 Clone Project",
 			"description": [
-				"온라인 클래스 플랫폼 Class101의 클론 프로젝트입니다..",
-				"4명의 프론트엔드, 2명의 백엔드가 2주의 기간동안 열심히 만들었습니다."
+				"온라인 클래스 플랫폼 Class101의 클론 프로젝트입니다.."
 			],
 			"details": [
 				"Slick Modal 구현 (이미지 클릭시 그 이미지부터 Slick 시작)",
@@ -59,7 +58,7 @@
 				"페이지나 기능별 반복될거라 예상되는 부분(Button, Input 등)을 미리 제작하여 작업했습니다.",
 				"Redux를 사용해 State관리가 까다로운 부분은 전역으로 관리했습니다."
 			],
-			"stack": ["React", "Styled Components", "Redux", "Axios", "JWT"],
+			"stack": ["React", "Styled", "Redux", "Axios", "JWT"],
 			"period": "2020.11.02 ~ 11.13",
 			"link": {
 				"github": "https://github.com/beginal/13-watchandchill-frontend",
@@ -71,8 +70,7 @@
 			"image": ["./img/watcha_1.png", "./img/watcha_2.png", "./img/watcha_3.png"],
 			"intro": "Watcha Pedia Cloneing Project",
 			"description": [
-				"영화 평점, 추천 사이트 왓챠피디아의 클론 프로젝트입니다.",
-				"4명의 프론트엔드, 2명의 백엔드가 2주의 기간동안 열심히 만들었습니다."
+				"영화 평점, 추천 사이트 왓챠피디아의 클론 프로젝트입니다."
 			],
 			"details": [
 				"Category Filter 기능 구현",
